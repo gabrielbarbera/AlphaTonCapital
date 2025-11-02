@@ -1,0 +1,12 @@
+# News Articles Directory
+
+This directory contains news articles managed by Keystatic CMS.
+
+Each article is stored as a Markdown file with frontmatter containing:
+- title: Article title
+- date: Publication date (YYYY-MM-DD)
+- source: News source (marketwatch, globenewswire, benzinga)
+- sourceUrl: Link to original article
+- excerpt: Article excerpt/description
+- published: true/false
+

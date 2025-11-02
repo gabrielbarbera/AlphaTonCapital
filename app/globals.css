@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: url('/assets/cursor_pointer.svg') 12.5 13, url('/assets/cursor_pointer.svg'), pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  cursor: url('/assets/cursor_pointer.svg') 12.5 13, url('/assets/cursor_pointer.svg'), pointer;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: none;
+}
+
+a:active {
+  outline: none;
+}
+
+a:hover {
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  button,
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Red Hat Display', sans-serif;
+  /* Custom cursor with multiple fallbacks */
+  cursor: url('/assets/cursor_pointer.svg') 12.5 13, url('/assets/cursor_pointer.svg'), pointer;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Hide default cursor when JavaScript fallback is active */
+.custom-cursor-fallback body,
+.custom-cursor-fallback body * {
+  cursor: none !important;
+}
+
+
