@@ -10,11 +10,18 @@ export async function POST(request: NextRequest) {
     const { password } = body;
 
     const adminPassword = process.env.KEYSTATIC_PASSWORD;
-    const sessionSecret = process.env.KEYSTATIC_SESSION_SECRET || 'change-this-secret-key';
+    const sessionSecret = process.env.KEYSTATIC_SESSION_SECRET;
 
     if (!adminPassword) {
       return NextResponse.json(
         { error: 'Admin password not configured' },
+        { status: 500 }
+      );
+    }
+
+    if (!sessionSecret) {
+      return NextResponse.json(
+        { error: 'Session secret not configured' },
         { status: 500 }
       );
     }
